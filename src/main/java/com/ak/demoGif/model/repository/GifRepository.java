@@ -26,11 +26,9 @@ public class GifRepository {
         return result;
     }
 
-    public static List<Gif> getAllGifs() {
+    public List<Gif> getGifs() {
         return ALL_GIFS;
     }
 
-    public static void setAllGifs(List<Gif> allGifs) {
-        ALL_GIFS = allGifs;
-    }
+
 }

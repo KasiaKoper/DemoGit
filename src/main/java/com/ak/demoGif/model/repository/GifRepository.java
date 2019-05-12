@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Repository         //gdy dodajemy to mamy tzw BINa, związaliśmy klasę, Spring będzie nam tworzył sam obiekty tej klasy
+@Repository         //gdy dodajemy to mamy tzw BEANa (ziarno), związaliśmy klasę, Spring będzie nam tworzył sam obiekty tej klasy
+                    //to musi być żeby adnotacja @Autowired zadzialala w Controllerze (podobnie działa @Component, ale są jakieś różnice)
 public class GifRepository {
 
     private static List<Gif> ALL_GIFS = Arrays.asList(new Gif("android-explosion", "mols", true),

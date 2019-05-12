@@ -2,8 +2,8 @@ package com.ak.demoGif.model.repository;
 
 import com.ak.demoGif.model.Gif;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,5 +30,16 @@ public class GifRepository {
         return ALL_GIFS;
     }
 
+
+    public List<Gif> getFavoritesGifs() {
+
+        List<Gif> favoriteGifList=new ArrayList<>();
+        for (Gif gif : ALL_GIFS) {
+            if (gif.isFavorite()) {
+                favoriteGifList.add(gif);
+            }
+        }
+        return favoriteGifList;
+    }
 
 }

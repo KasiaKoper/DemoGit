@@ -59,4 +59,15 @@ public class GifController {
         return "favorites";
     }
 
+    @RequestMapping("/gif/{name}")
+    public String gifNames(@PathVariable String name, ModelMap modelMap){
+
+        Gif gif=gifRepository.getGifByName(name);
+
+        modelMap.put("gif",gif);
+
+        return "gif-details";               // tą nazwę bierzemy z nazwy templatu czyli nazwa pliku html
+    }
+
+
 }

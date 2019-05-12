@@ -56,4 +56,13 @@ public class GifRepository {
     }
 
 
+    public Gif getGifByName(String name){
+        for (Gif gif : ALL_GIFS) {
+            if (gif.getName().equals(name)){
+                return gif;
+            }
+        }
+        return null;        // return Optional.empty()      - normalnie tu powinna byc obsługa wyjatków
+    }
+
 }

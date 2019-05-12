@@ -11,12 +11,12 @@ import java.util.List;
                     //to musi być żeby adnotacja @Autowired zadzialala w Controllerze (podobnie działa @Component, ale są jakieś różnice)
 public class GifRepository {
 
-    private static List<Gif> ALL_GIFS = Arrays.asList(new Gif("android-explosion", "mols", true),
-            new Gif("ben-and-mike", "mika", true),
-            new Gif("book-dominos", "mem", false),
-            new Gif("compiler-bot", "bot", true),
-            new Gif("cowboy-coder", "code", false),
-            new Gif("infinite-andrew", "andrew", true));
+    private static List<Gif> ALL_GIFS = Arrays.asList(new Gif("android-explosion", "mols", true,1),
+            new Gif("ben-and-mike", "mika", true,2),
+            new Gif("book-dominos", "mem", false,0),
+            new Gif("compiler-bot", "bot", true,1),
+            new Gif("cowboy-coder", "code", false,1),
+            new Gif("infinite-andrew", "andrew", true,2));
 
     public String getGifsNames() {
         String result="";
@@ -42,5 +42,18 @@ public class GifRepository {
         }
         return favoriteGifList;
     }
+
+
+    public List<Gif> getGifsByCategoryId(int id){
+
+        List<Gif> gifsByCategoryId =new ArrayList<>();
+        for (Gif gif : ALL_GIFS) {
+            if(gif.getCategoryId()==id){
+                    gifsByCategoryId.add(gif);
+            }
+        }
+        return gifsByCategoryId;
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.ak.demoGif.model.repository;
 
 import com.ak.demoGif.model.Category;
+import com.ak.demoGif.model.Gif;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -19,4 +20,8 @@ public class CategoryRepository {
         return ALL_CATEGORIES;
     }
 
+    public Category getCategoryById(int id){
+        return ALL_CATEGORIES.get(id);
+    }
+    
 }
